@@ -1,11 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import {
-  Search,
-  Filter,
-  Home,
-  ShoppingCart as CartIcon,
-  Info,
-} from 'lucide-react';
+import {Search,Filter,Home,ShoppingCart as CartIcon,Info,} from 'lucide-react';
 import { EventCard } from './components/EventCard';
 import { Cart } from './components/Cart';
 import { Onboarding } from './components/Onboarding';
