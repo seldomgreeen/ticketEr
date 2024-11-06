@@ -45,7 +45,7 @@ export function Onboarding({ onClose }: OnboardingProps) {
 
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold text-white mb-4">
-            Welcome to <span className="text-blue-400">TicketMaster</span>
+            Welcome to <span className="text-blue-400">TicketEr</span>
           </h2>
           <p className="text-gray-300 text-lg">
             Your one-stop destination for all entertainment tickets
