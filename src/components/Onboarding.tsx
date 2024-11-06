@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Ticket, Presentation, CreditCard, X, ShieldEllipsis, Footprints} from 'lucide-react';
+import { Ticket, Presentation, CreditCard, X, ShieldEllipsis} from 'lucide-react';
 
 interface OnboardingProps {
   onClose: () => void;
@@ -25,8 +25,8 @@ export function Onboarding({ onClose }: OnboardingProps) {
       description: "Promote your concerts and events to a wide audience with our targeted marketing tools."
     },
     {
-      icon: <Footprints className="w-8 h-8 text-blue-400" />,
-      title: "Non-Discriminatory Platform",
+      icon: <CreditCard className="w-8 h-8 text-blue-400" />,
+      title: "Support for Smaller Events",
       description: "We support smaller events and artists by creating fair contracts and providing them with the tools they need to succeed."
     }
   ];
@@ -34,13 +34,8 @@ export function Onboarding({ onClose }: OnboardingProps) {
   return (
     <div 
       className={`fixed inset-0 z-50 flex items-center justify-center transition-transform duration-500 transform ${isClosing ? 'translate-y-full' : 'translate-y-0'}`}
-      style={{
-        backgroundImage: 'url("https://images.unsplash.com/photo-1540039155733-5bb30b53aa14?auto=format&fit=crop&w=2000&q=80")',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center'
-      }}
     >
-      <div className={`absolute inset-0 bg-gray-900/90 backdrop-blur-sm transition-opacity duration-500 ${isClosing ? 'opacity-0' : 'opacity-100'}`} />
+      <div className={`absolute inset-0 bg-black/50 backdrop-blur-sm transition-opacity duration-500 ${isClosing ? 'opacity-0' : 'opacity-100'}`} />
       
       <div className={`relative max-w-3xl w-full mx-4 bg-gray-800/90 backdrop-blur-sm rounded-2xl p-6 max-h-[80vh] overflow-y-auto scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-gray-800 transition-all duration-500 transform ${isClosing ? 'translate-y-full opacity-0' : 'translate-y-0 opacity-100'}`}>
         <button
@@ -86,7 +81,7 @@ export function Onboarding({ onClose }: OnboardingProps) {
             </h2>
           </div>
           <p className="text-gray-300 text-sm">
-            Other platforms such as <span className="text-blue-300">ticketmaster</span> and <span className="text-blue-300">Seatgeek</span> have been known to work with scalpers to raise their fees. These companies use predatory tactics, limiting the decisions on prices, adding unnecessary fees, and taking large cuts of ticket revenue from venues and events by requiring them to use their ticketing app in order to be promoted. Given their dominance in the industry, not using their app can severely limit an event's visibility and success. The team behind TicketEr has decided to speak out against the unfairness to these venues and events by creating a platform that is fair to both the event hoster and the consumer. We believe that the event should have the final say in the price of their tickets, and that the consumer should have the right to purchase tickets at face value. This is why, we guarantee fair price splits and no hidden fees. We will work with each and every venue/event to decide a custom revenue split which is fair to both parties. On top of this, we are introducing a fairer way to promote an event. Instead of limiting the visibility of an event based on the use of our ticketing app, we will work with the host of the event to promote their event separately from the ticketing process.
+            Our <span className="text-blue-300">competitors</span> have been known to work with scalpers to raise their fees. These companies use <span className="text-blue-300">predatory</span> tactics, limiting the decisions on prices, adding <span className="text-blue-300">unncessary</span> fees, and taking large cuts of ticket revenue from venues and events by <span className="text-blue-300">forcing</span> them to use their ticketing app in order to be promoted. Given their dominance in the industry, not using their app can severely <span className="text-blue-300">limit</span> an event's visibility and success. The team behind TicketEr has decided to speak out against the <span className="text-blue-300">unfairness</span> to these venues and events by creating a platform that is <span className="text-blue-300">fair</span> to both the event hoster and the consumer. We believe that the event should have the final say in the price of their tickets, and that the consumer should have the right to purchase tickets at face value. This is why, we guarantee fair price splits and <span className="text-blue-300">no hidden</span> fees. We will work with each and every venue/event to decide a custom revenue split which is <span className="text-blue-300">fair</span> to both parties. On top of this, we are introducing a <span className="text-blue-300">equitable</span> way to promote an event. Instead of limiting the visibility of an event based on the use of our ticketing app, we will work with the host of the event to promote their event separately from the ticketing process.
           </p>
         </div>
 
