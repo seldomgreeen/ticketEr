@@ -37,7 +37,7 @@ export function Onboarding({ onClose }: OnboardingProps) {
     >
       <div className={`absolute inset-0 bg-black/50 backdrop-blur-sm transition-opacity duration-500 ${isClosing ? 'opacity-0' : 'opacity-100'}`} />
       
-      <div className={`relative max-w-3xl w-full mx-4 bg-gray-800/90 backdrop-blur-sm rounded-2xl p-6 max-h-[80vh] overflow-y-auto scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-gray-800 transition-all duration-500 transform ${isClosing ? 'translate-y-full opacity-0' : 'translate-y-0 opacity-100'}`}>
+      <div className={`relative max-w-3xl w-full mx-4 bg-gray-800/90 backdrop-blur-sm rounded-2xl p-6 max-h-[80vh] overflow-y-auto scrollbar-none scrollbar-thumb-blue-500 scrollbar-thumb-rounded-full scrollbar-track-gray-800 transition-all duration-500 transform ${isClosing ? 'translate-y-full opacity-0' : 'translate-y-0 opacity-100'}`}>
         <button
           onClick={handleClose}
           className="absolute right-4 top-4 text-gray-400 hover:text-white transition-colors"

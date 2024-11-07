@@ -29,7 +29,10 @@ function App() {
   const handleShowOnboarding = () => {
     setShowOnboarding(true);
   };
-
+  const handleHomeClick = () => {
+    setSearchTerm('');
+    setSelectedType('all');
+  };
   const filteredEvents = events.filter((event) => {
     const matchesSearch =
       event.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -69,52 +72,33 @@ function App() {
     <div className="min-h-screen bg-gray-900">
       {showOnboarding && <Onboarding onClose={handleCloseOnboarding} />}
 
-      {/* Header */}
-      <header className="bg-gray-800/80 backdrop-blur-sm sticky top-0 z-40 border-b border-gray-700">
+      <header className="bg-gray-800/80 backdrop-blur-sm sticky top-5 z-40 border-b border-gray-700 rounded-3xl mr-2 ml-2">
         <div className="max-w-7xl mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-8">
-              <h1 className="text-2xl font-bold text-white">
+              <button onClick={handleHomeClick} className="text-2xl font-bold text-white">
                 Ticket<span className="text-blue-400">Er</span>
-              </h1>
+              </button>
               <nav className="hidden md:flex items-center gap-6">
-                <button className="text-gray-300 hover:text-white flex items-center gap-2">
-                  <Home className="w-4 h-4" />
-                  <span>Home</span>
-                </button>
-                <EventTypeMenu
-                  selectedType={selectedType}
-                  onTypeChange={setSelectedType}
-                />
+                <EventTypeMenu selectedType={selectedType} onTypeChange={setSelectedType}/>
               </nav>
             </div>
 
             <div className="flex items-center gap-4">
-              <button
-                onClick={handleShowOnboarding}
-                className="text-gray-300 hover:text-white p-2 rounded-lg hover:bg-gray-700/50 flex items-center gap-2"
-              >
-                <Info className="w-5 h-5" />
-                <span className="hidden sm:inline">Help</span>
+              <button onClick={handleShowOnboarding} className="text-gray-300 hover:text-white p-2 rounded-lg hover:bg-gray-700/50 flex items-center gap-2">
+                <Info className="w-5 h-5"/>
+                <span className="hidden sm:inline">Info</span>
               </button>
-              <button
-                onClick={() => setShowCart(true)}
-                className="relative text-gray-300 hover:text-white p-2 rounded-lg hover:bg-gray-700/50"
-              >
+              <button onClick={() => setShowCart(true)} className="relative text-gray-300 hover:text-white p-2 rounded-lg hover:bg-gray-700/50">
                 <CartIcon className="w-6 h-6" />
-                {cartItemCount > 0 && (
-                  <span className="absolute -top-1 -right-1 bg-blue-500 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">
-                    {cartItemCount}
-                  </span>
-                )}
+                {cartItemCount > 0 && (<span className="absolute -top-1 -right-1 bg-blue-500 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">{cartItemCount}</span>)}
               </button>
             </div>
           </div>
         </div>
       </header>
 
-      {/* Search */}
-      <div className="max-w-7xl mx-auto px-4 py-8">
+      <div className="max-w-7xl mx-auto px-4 py-8 mt-2">
         <div className="relative flex-1 mb-8">
           <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
           <input
@@ -126,14 +110,10 @@ function App() {
           />
         </div>
 
-        {/* Event Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredEvents.map((event) => (
-            <EventCard key={event.id} event={event} onBuy={handleBuy} />
-          ))}
+          {filteredEvents.map((event) => (<EventCard key={event.id} event={event} onBuy={handleBuy} />))}
         </div>
 
-        {/* Cart */}
         {showCart && (
           <Cart
             items={cart}
